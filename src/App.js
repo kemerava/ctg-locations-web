@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import SigninPage from './pages/SigninPage';
 import SignupPage from './pages/SingupPage';
 import LocationsPage from './pages/LocationsPage';
+import Modal from "./components/Modal";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/signin" component={SigninPage} exact />
         <Route path="/signup" component={SignupPage} exact />
         <Route path="/locations" component={LocationsPage} exact />
+        <Route path="/test-modal" component={Modal} exact />
       </BrowserRouter>
     </div>
   );

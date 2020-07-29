@@ -3,6 +3,8 @@ import GoogleMapReact from 'google-map-react';
 import LocationMarker from './LocationMarker';
 import { useSelector, useDispatch } from 'react-redux';
 import { addLocation } from '../actions/locations';
+import { fetchModal } from '../actions/modal';
+import Modal from "./Modal";
 
 function Map() {
   const locations = useSelector((state) => state.locations);
@@ -26,8 +28,12 @@ function Map() {
     });
 
   const handleAddLocation = event => {
+
     const { lat, lng } = event;
-    const description = window.prompt('Choose a location name');
+    console.log(lat, lng);
+
+    dispatch(fetchModal(true));
+    const description = null;
 
     if (!description) {
       return;

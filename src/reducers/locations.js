@@ -4,6 +4,7 @@ const initialState = {
   user: null,
   locations: [],
   showPublicLocations: false,
+  showModalWindow: false
 };
 
 const locationsReducer = (state = initialState, action) => {
@@ -31,6 +32,10 @@ const locationsReducer = (state = initialState, action) => {
 
     case 'SET_SHOW_PUBLIC':
       state.showPublicLocations = action.value;
+      return state;
+
+    case 'SET_MODAL':
+      state.showModalWindow = action.showModal;
       return state;
 
     default:
